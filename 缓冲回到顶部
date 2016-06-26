@@ -1,6 +1,6 @@
 <!--这个代码似乎有BUG？-->
 
-
+<!--对了我还要养成打备注的好习惯！-->
 
 
 
@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>	<!--调用来自百度的jq库-->
 		<title></title>
 	</head>
 <!--	css样式-->
@@ -28,11 +28,12 @@
 		<div id="totop"></div>
 	</body>
 	<script type="text/javascript">
-		$("#totop").click(function(){
-			totop=setInterval(function(){
-				var top=$(window).scrollTop()
-				top-=Math.ceil(top/20)
-				$(window).scrollTop(top)
+		$("#totop").click(function(){	//点击回到顶部按钮
+			totop=setInterval(function(){	//启动定时器
+				var top=$(window).scrollTop()	//获取浏览器滚动条到顶部的距离
+				top-=Math.ceil(top/20)	//除以20
+				$(window).scrollTop(top)	//定义新高度
+				//当到达顶部的时候取消定时器
 				if(top<=0){
 					clearInterval(totop)
 				}
