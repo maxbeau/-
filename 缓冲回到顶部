@@ -1,0 +1,42 @@
+<!--这个代码似乎有BUG？-->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<title></title>
+	</head>
+<!--	css样式-->
+	<style type="text/css">
+		div{ width: 100%; height: 800px; font-size: 120px; line-height: 800px; text-align: center;}
+		#totop{ width: 100px; height: 100px; background: black; opacity: 0.5; position: fixed; right: 50px; bottom: 50px; cursor: pointer;}
+	</style>
+	<body>
+		<div id="one">1</div>
+		<div id="two">2</div>
+		<div id="three">3</div>
+		<div id="fore">4</div>
+		<div id="five">5</div>
+		<div id="six">6</div>
+		<div id="totop"></div>
+	</body>
+	<script type="text/javascript">
+		$("#totop").click(function(){
+			totop=setInterval(function(){
+				var top=$(window).scrollTop()
+				top-=Math.ceil(top/20)
+				$(window).scrollTop(top)
+				if(top<=0){
+					clearInterval(totop)
+				}
+			})
+		})
+	</script>
+</html>
